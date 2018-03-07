@@ -1,3 +1,20 @@
-<p>
-  todo-list works!
-</p>
+<div style="max-width:500px;margin-left:auto;margin-right:auto;">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Done?</th>
+        <th>ID</th>
+        <th>Task</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todoList">
+        <td width="1%"> <input type="checkbox" [(ngModel)]="todo.status" (click)="onUpdateStatus(todo.id)"/> </td>
+        <td width="1%"> {{ todo.id }} </td>
+        <td [ngStyle]="{'text-decoration': (todo.status) ? 'line-through' : '' }"> {{ todo.description }} </td>
+        <td width="1%"> <button type="button" class="btn btn-danger" (click)="onDeleteTodo(todo.id)">Delete</button> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+import { TodoActions } from "../../../todo.actions";
+
 
 @Component({
   selector: 'app-todo-list',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoListComponent implements OnInit {
 
-  constructor() { }
+  todoList: Observable<any>;
 
+  constructor(private store: Store<any>,
+    private todoActions:TodoActions) {
+    store.subscribe(store =>{
+      this.todoList = store.todoList;
+    });
+   }
+  
   ngOnInit() {
   }
 
+  onUpdateStatus(id){
+    this.store.dispatch(this.todoActions.updateStatus(id))
+  }
+
+  onDeleteTodo(id){
+    this.store.dispatch(this.todoActions.deleteTodo(id))
+  }
 }

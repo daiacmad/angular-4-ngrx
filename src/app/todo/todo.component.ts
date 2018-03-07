@@ -10,23 +10,9 @@ import { Observable } from 'rxjs/Observable';
 })
 export class TodoComponent implements OnInit {
 
-  todoList: Observable<any>;
-  description:any;
-
-
-  constructor(private store: Store<any>,
-    private todoActions:TodoActions) {
-    store.subscribe(store =>{
-      this.todoList = store.todoList;
-    });
-   }
+  constructor() { }
  
   ngOnInit() {
   }
-
-  onEnterAddTodo() {
-    this.store.dispatch(this.todoActions.addTodo(this.description));
-    this.description = "";
-  }
-
+  
 }

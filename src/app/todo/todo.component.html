@@ -1,11 +1,4 @@
 <div class="container">
-  <input type="text" (keyup.enter)="onEnterAddTodo()" [(ngModel)]="description" name="description"/>
-  <ul>
-    <li *ngFor="let todo of todoList"> 
-      {{ todo.id }}
-      {{ todo.description }}
-      <button type="button">Delete</button>
-    </li>
-  </ul>
+  <app-todo-list-page></app-todo-list-page>
 </div>
  

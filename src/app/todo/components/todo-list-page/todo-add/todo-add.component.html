@@ -1,3 +1,11 @@
-<p>
-  todo-add works!
-</p>
+<div>
+  <div style="text-align:center">
+    <label>
+      <h2>Todo List</h2>
+    </label>
+  </div>
+  <div class="form-group" style="max-width:400px;margin-left:auto;margin-right:auto;position:relative;margin-top:20px;">
+      <input type="text" style="padding-right:115px;" class="form-control" (keyup.enter)="onEnterAddTodo()" [(ngModel)]="description" name="description"/>
+      <button type="button" (click)="onEnterAddTodo()" style="position:absolute;top:0;right:0;width:100px" class="btn btn-primary">Add</button>
+  </div>
+</div>
