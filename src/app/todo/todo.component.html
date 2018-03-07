@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <input type="text" (keyup.enter)="onEnterAddTodo()" [(ngModel)]="description" name="description"/>
   <ul>
     <li *ngFor="let todo of todoList"> 
@@ -8,3 +8,4 @@
     </li>
   </ul>
 </div>
+ 

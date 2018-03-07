@@ -3,23 +3,18 @@ import { Store } from '@ngrx/store';
 import { TodoActions } from "./todo.actions";
 import { Observable } from 'rxjs/Observable';
 
-interface AppState {
-  todoList:any;
-}
-
-
 @Component({
-  selector: 'app-todo-list',
-  templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.scss']
+  selector: 'app-todo',
+  templateUrl: './todo.component.html',
+  styleUrls: ['./todo.component.scss']
 })
-export class TodoListComponent implements OnInit {
+export class TodoComponent implements OnInit {
 
   todoList: Observable<any>;
   description:any;
 
 
-  constructor(private store: Store<AppState>,
+  constructor(private store: Store<any>,
     private todoActions:TodoActions) {
     store.subscribe(store =>{
       this.todoList = store.todoList;
@@ -33,4 +28,5 @@ export class TodoListComponent implements OnInit {
     this.store.dispatch(this.todoActions.addTodo(this.description));
     this.description = "";
   }
+
 }
