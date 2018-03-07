@@ -14,11 +14,13 @@ import { TodoActions } from "./todo/todo.actions";
 //module
 import {ShareModule} from "./share/share.module";
 import { TodoModule } from "./todo/todo.module";
+import { HeroComponent } from './hero/hero.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,

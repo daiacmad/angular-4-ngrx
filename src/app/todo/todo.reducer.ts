@@ -5,6 +5,7 @@ const initialState:any =[];
 
 export function reducer(state:any = initialState, {type , payload }: any) {
 	switch (type) {
+        //ADD
         case TodoActions.ADD:
             state = [...state,{
                 id: new Date().getTime(),
@@ -13,12 +14,14 @@ export function reducer(state:any = initialState, {type , payload }: any) {
             }]
 			return state;
 
+        // DELETE
         case TodoActions.DELETE:
             state = state.filter(res =>{
                 return res.id != payload;
             })
             return state;
             
+        // UPDATE
         case TodoActions.UPDATE:
             state = state.map(element =>{
                if(element.id == payload){
