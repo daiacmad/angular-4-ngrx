@@ -1,0 +1,4 @@
+<div class="form-group" [ngClass]="{'has-error': displayError.invalid && displayError.dirty }" >
+  <ng-content></ng-content>
+  <div [hidden]="!displayError.hasError('required') || !displayError.dirty" class="help-block">This field is required</div>
+</div>

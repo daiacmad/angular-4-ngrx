@@ -14,20 +14,23 @@ import { TodoActions } from "./todo/todo.actions";
 //module
 import {ShareModule} from "./share/share.module";
 import { TodoModule } from "./todo/todo.module";
-import { HeroComponent } from './hero/hero.component';
+import { HeroModule } from './hero/hero.module';
+import { MultiStepModule } from './multi-step/multi-step.module';
+import { InputComponent } from './components/input/input.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeroComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     ShareModule,
     RouterModule.forRoot(routes,{ preloadingStrategy: PreloadAllModules }),
     StoreModule.forRoot(reducers),
-    TodoModule
+    HeroModule,
+    TodoModule,
+    MultiStepModule
   ],
   providers: [TodoActions],
   bootstrap: [AppComponent]

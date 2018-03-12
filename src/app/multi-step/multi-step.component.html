@@ -1,0 +1,7 @@
+<div>
+  <app-step [step]="step"></app-step>
+  <app-purchase-option *ngIf="step == 1" (onSubmited)="onPurchaseOptionSubmited($event)"></app-purchase-option>
+  <app-configure *ngIf="step == 2"></app-configure>
+  <app-detail *ngIf="step == 3"></app-detail>
+  <app-summary *ngIf="step == 4"></app-summary>
+</div>

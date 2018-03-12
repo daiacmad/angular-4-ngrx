@@ -1,0 +1,18 @@
+<div>
+  <div [formGroup]="purchaseOptionForm">
+    <app-input [displayError]="purchaseOptionForm.get('option')">
+      <label>Option</label>
+      <input class="form-control" formControlName="option" type="text"/>
+    </app-input>
+    <div formGroupName="phone">
+      <label>Phone</label>
+      <app-input [displayError]="purchaseOptionForm.get('phone.digit') ">
+        <input class="form-control" formControlName="digit" type="text"/>
+      </app-input>
+      <app-input [displayError]="purchaseOptionForm.get('phone.number') ">
+        <input class="form-control" formControlName="number" type="text"/>
+      </app-input>
+    </div>
+    <button (click)="onClick()" class="btn btn-primary" [disabled]="purchaseOptionForm.invalid">Click</button> 
+  </div>
+</div>
